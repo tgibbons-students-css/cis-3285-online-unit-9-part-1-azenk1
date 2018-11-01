@@ -12,13 +12,16 @@ namespace SingleResponsibilityPrinciple
         static void Main(string[] args)
         {
             var tradeStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SingleResponsibilityPrinciple.trades4.txt");
-
+            var URL = "http://faculty.css.edu/tgibbons/trades4.txt";
             var tradeProcessor = new TradeProcessor();
-            tradeProcessor.ProcessTrades(tradeStream);
+            tradeProcessor.ProcessTrades(URL);
 
             Console.ReadKey();
 
-            TradeProcessor.ReadURLTradeData("http://faculty.css.edu/tgibbons/trades4.txt");
+            
+
+            //Call to ReadURLTradeData to create URL stream.
+            tradeProcessor.ReadURLTradeData(URL);
         }
     }
 }
